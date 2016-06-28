@@ -116,7 +116,7 @@ public class AddressAdapter extends BaseAdapter {
 			Address address = getItem(position);
 			int id = address.getId();
 			presenter.setAddDefault(id);
-
+			notifyDataSetChanged();
 		}
 	}
 
