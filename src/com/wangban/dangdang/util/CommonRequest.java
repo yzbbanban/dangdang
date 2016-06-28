@@ -59,7 +59,7 @@ public class CommonRequest extends StringRequest {
 		if (JSESSIONID != null) {
 			headers.put("Cookie", JSESSIONID);
 		}
-		// 将Cookie与cart都传入服务器
+		// 将cart传入服务器
 		SharedPreferences pref = DangApplication.getContext()
 				.getSharedPreferences("cart", Context.MODE_PRIVATE);
 		String cart = pref.getString("cart", null);

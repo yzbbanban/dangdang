@@ -30,6 +30,12 @@ public class StorePresenterImpl implements IStorePresenter {
 				view.showRecommendBookList(books);
 
 			}
+
+			@Override
+			public void missData(Object object) {
+				// TODO Auto-generated method stub
+				
+			}
 		});
 	}
 
@@ -43,6 +49,12 @@ public class StorePresenterImpl implements IStorePresenter {
 				view.showNewBookList(books);
 
 			}
+
+			@Override
+			public void missData(Object object) {
+				// TODO Auto-generated method stub
+				
+			}
 		});
 	}
 
@@ -55,6 +67,12 @@ public class StorePresenterImpl implements IStorePresenter {
 				List<Book> books = (List<Book>) object;
 				view.showHotBookList(books);
 
+			}
+
+			@Override
+			public void missData(Object object) {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 

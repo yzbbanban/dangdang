@@ -32,6 +32,12 @@ public class RegistPresenterImpl implements IRegistPresenter {
 				// Log.i("supergirl", "presenter: " + bitmap.toString());
 				view.showCodeImage(bitmap);
 			}
+
+			@Override
+			public void missData(Object object) {
+				// TODO Auto-generated method stub
+				
+			}
 		});
 
 	}
@@ -46,6 +52,12 @@ public class RegistPresenterImpl implements IRegistPresenter {
 			public void findData(Object object) {
 				Log.i("supergirl", "regist presenter");
 				view.registSuccess();
+			}
+
+			@Override
+			public void missData(Object object) {
+				view.registFailure();
+				
 			}
 		});
 		

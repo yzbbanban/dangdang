@@ -6,4 +6,5 @@ import com.wangban.dangdang.entity.Book;
 
 public interface IModelCallback {
 	void findData(Object object);
+	void missData(Object object);
 }

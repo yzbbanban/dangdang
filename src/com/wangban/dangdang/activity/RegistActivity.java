@@ -40,8 +40,8 @@ public class RegistActivity extends Activity implements IRegistView,
 	private EditText etRegistCode;
 	@ViewInject(R.id.btn_regist)
 	private Button btnRegist;
-	@ViewInject(R.id.ibtn_regist_back)
-	private ImageButton ibtnRegistBack;
+	@ViewInject(R.id.btn_regist_back)
+	private Button btnRegistBack;
 	private IRegistPresenter presenter;
 
 	public RegistActivity() {
@@ -70,6 +70,7 @@ public class RegistActivity extends Activity implements IRegistView,
 
 	private void setListeners() {
 		ivRegistCode.setOnClickListener(this);
+		btnRegistBack.setOnClickListener(this);
 		btnRegist.setOnClickListener(this);
 	}
 
@@ -95,8 +96,8 @@ public class RegistActivity extends Activity implements IRegistView,
 		case R.id.btn_regist:
 			setData();
 			
-		case R.id.ibtn_regist_back:
-			finish();
+		case R.id.btn_regist_back:
+			this.finish();
 			overridePendingTransition(R.anim.zoom_exit, R.anim.zoom_enter);
 		default:
 			break;

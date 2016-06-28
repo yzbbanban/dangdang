@@ -9,12 +9,14 @@ import com.wangban.dangdang.entity.User;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.SharedPreferences;
 
 public class DangApplication extends Application {
 	private static DangApplication context;
 	private static RequestQueue queue;
 	private static Cart cart;
-	private static User user;
+	private User user;
+	private String token;
 
 	@Override
 	public void onCreate() {
@@ -38,7 +40,28 @@ public class DangApplication extends Application {
 		return context;
 	}
 
-	public static User getUser() {
+	public void saveUser(User user) {
+		this.user = user;
+	}
+
+	public User getUser() {
 		return user;
 	}
+
+	public String getToken() {
+		SharedPreferences pref = this.getSharedPreferences("token",
+				MODE_PRIVATE);
+		String token = pref.getString("token", "");
+		return token;
+	}
+
+	public void saveToken(String token) {
+		this.token = token;
+		SharedPreferences pref = this.getSharedPreferences("token",
+				MODE_PRIVATE);
+		SharedPreferences.Editor editor = pref.edit();
+		editor.putString("token", token);
+		editor.commit();
+	}
+
 }
