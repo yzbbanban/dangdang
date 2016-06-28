@@ -89,13 +89,14 @@ public class AddressActivity extends Activity implements IAddressView,
 		} else {
 			Toast.makeText(this, "还没有保存地址", Toast.LENGTH_SHORT).show();
 		}
-
+		
 	}
 
 	@Override
 	public void showData() {
 		adapter = new AddressAdapter(this, addresses);
 		lvAddressManager.setAdapter(adapter);
+		adapter.setPresenter(presenter);
 
 	}
 

@@ -8,4 +8,5 @@ import com.wangban.dangdang.entity.Address;
 public interface IAddressModel {
 	void getAddress(IModelCallback callback);
 	void AddAddress(Address address,IModelCallback callback);
+	void setAddDefault(int id,IModelCallback callback);
 }

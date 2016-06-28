@@ -31,7 +31,7 @@ public class AddressPresenterImpl implements IAddressPresenter {
 
 			@Override
 			public void missData(Object object) {
-				String message=(String) object;
+				String message = (String) object;
 				view.addAddressFail(message);
 
 			}
@@ -54,6 +54,24 @@ public class AddressPresenterImpl implements IAddressPresenter {
 			@Override
 			public void missData(Object object) {
 				view.setData(null);
+
+			}
+
+		});
+
+	}
+
+	@Override
+	public void setAddDefault(int id) {
+		model.setAddDefault(id, new IModelCallback() {
+			@Override
+			public void findData(Object object) {
+				listAddress();
+			}
+
+			@Override
+			public void missData(Object object) {
+				
 
 			}
 

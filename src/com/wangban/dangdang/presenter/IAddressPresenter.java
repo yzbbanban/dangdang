@@ -8,4 +8,5 @@ import com.wangban.dangdang.entity.Address;
 public interface IAddressPresenter {
 	void loadAddress(Address address);
 	void listAddress();
+	void setAddDefault(int id);
 }

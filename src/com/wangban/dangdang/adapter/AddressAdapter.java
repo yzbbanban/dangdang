@@ -6,12 +6,16 @@ import org.w3c.dom.Text;
 
 import com.wangban.dangdang.R;
 import com.wangban.dangdang.entity.Address;
+import com.wangban.dangdang.presenter.IAddressPresenter;
+import com.wangban.dangdang.presenter.impl.AddressPresenterImpl;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -23,12 +27,14 @@ public class AddressAdapter extends BaseAdapter {
 	private List<Address> addresses;
 	private LayoutInflater layoutInflater;
 	private ViewHolder holder;
+	private IAddressPresenter presenter;
 
 	public AddressAdapter(Context context, List<Address> addresses) {
 		super();
 		this.context = context;
 		this.addresses = addresses;
 		this.layoutInflater = LayoutInflater.from(context);
+
 	}
 
 	@Override
@@ -58,10 +64,12 @@ public class AddressAdapter extends BaseAdapter {
 					.findViewById(R.id.tv_address_user_phone);
 			holder.tvAddressUserAddress = (TextView) convertView
 					.findViewById(R.id.tv_address_user_address);
+
 			holder.rbtnAddressDefault = (RadioButton) convertView
 					.findViewById(R.id.rbtn_address_default);
 			holder.rbtnAddressEdit = (RadioButton) convertView
 					.findViewById(R.id.rbtn_address_edit);
+
 			holder.rbtnAddressDelete = (RadioButton) convertView
 					.findViewById(R.id.rbtn_address_delete);
 
@@ -71,7 +79,12 @@ public class AddressAdapter extends BaseAdapter {
 		holder.tvAddressUserName.setText(address.getReceiveName());
 		holder.tvAddressUserPhone.setText(address.getPhone());
 		holder.tvAddressUserAddress.setText(address.getFull_address());
-
+		// ÉèÖÃÄ¬ÈÏµÄ×´Ì¬
+		holder.rbtnAddressDefault.setChecked(address.getIs_default() == 1);
+		holder.rbtnAddressDefault
+				.setOnCheckedChangeListener(new InnerOnCheckChangeListener(
+						position));
+		address.getId();
 		return convertView;
 	}
 
@@ -84,4 +97,27 @@ public class AddressAdapter extends BaseAdapter {
 		RadioButton rbtnAddressDelete;
 
 	}
+
+	public void setPresenter(IAddressPresenter presenter) {
+		this.presenter = presenter;
+
+	}
+
+	private class InnerOnCheckChangeListener implements OnCheckedChangeListener {
+		private int position;
+
+		public InnerOnCheckChangeListener(int position) {
+			this.position = position;
+		}
+
+		@Override
+		public void onCheckedChanged(CompoundButton buttonView,
+				boolean isChecked) {
+			Address address = getItem(position);
+			int id = address.getId();
+			presenter.setAddDefault(id);
+
+		}
+	}
+
 }

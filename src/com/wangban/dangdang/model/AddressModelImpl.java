@@ -94,7 +94,7 @@ public class AddressModelImpl implements IAddressModel {
 								.parseAddress(jsonArray);
 
 						callback.findData(addresses);
-					}else {
+					} else {
 						callback.missData(null);
 					}
 				} catch (JSONException e) {
@@ -108,6 +108,38 @@ public class AddressModelImpl implements IAddressModel {
 			@Override
 			public void onErrorResponse(VolleyError error) {
 				callback.missData(null);
+
+			}
+		});
+		DangApplication.getQueue().add(request);
+	}
+
+	@Override
+	public void setAddDefault(int id, IModelCallback callback) {
+		String url = GlobalConsts.URL_USER_SET_ADDRESS_DEFAULT + "?id=" + id;
+		CommonRequest request = new CommonRequest(url, new Listener<String>() {
+
+			@Override
+			public void onResponse(String response) {
+				try {
+					JSONObject object = new JSONObject(response);
+					if (object.getInt("code")==GlobalConsts.RESPONSE_CODE_SUCCESS) {
+						
+					}else {
+						object.getString("error_msg");
+						
+					}
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			}
+		}, new ErrorListener() {
+
+			@Override
+			public void onErrorResponse(VolleyError error) {
+				// TODO Auto-generated method stub
 
 			}
 		});

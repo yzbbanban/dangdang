@@ -25,6 +25,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MineFragment extends Fragment implements IMineView,
 		OnClickListener {
@@ -84,8 +85,12 @@ public class MineFragment extends Fragment implements IMineView,
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.login_photo:
-			intent = new Intent(getActivity(), LoginActivity.class);
-			startActivityForResult(intent, GlobalConsts.RESULT_OK);
+			if (tvMineName.getText().toString().equals("ö©ö©")) {
+				intent = new Intent(getActivity(), LoginActivity.class);
+				startActivityForResult(intent, GlobalConsts.RESULT_OK);
+			}else {
+				Toast.makeText(getActivity(), "ÄúÒÑµÇÂ½", Toast.LENGTH_SHORT).show();	
+			}
 			break;
 		case R.id.ll_my_address:
 			intent=new Intent(getActivity(),AddressActivity.class);
@@ -104,7 +109,7 @@ public class MineFragment extends Fragment implements IMineView,
 				// Log.i("supergirl", app.getUser().getNickname());
 			}
 		} else {
-			tvMineName.setText("ÓîÖÇ²¨°ß");
+			tvMineName.setText("ö©ö©");
 		}
 		// Log.i("supergirl", "MineFragment setdata");
 	}
