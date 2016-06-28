@@ -4,6 +4,7 @@ import org.xutils.x;
 import org.xutils.view.annotation.ViewInject;
 
 import com.wangban.dangdang.R;
+import com.wangban.dangdang.activity.AddressActivity;
 import com.wangban.dangdang.activity.LoginActivity;
 import com.wangban.dangdang.app.DangApplication;
 import com.wangban.dangdang.consts.GlobalConsts;
@@ -22,6 +23,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MineFragment extends Fragment implements IMineView,
@@ -30,7 +32,19 @@ public class MineFragment extends Fragment implements IMineView,
 	private CircleImageView ivLoginPhoto;
 	@ViewInject(R.id.tv_mine_name)
 	private TextView tvMineName;
+	@ViewInject(R.id.ll_my_collect)
+	private LinearLayout llMyCollect;
+	@ViewInject(R.id.ll_my_address)
+	private LinearLayout llMyAddress;
+	@ViewInject(R.id.ll_my_order)
+	private LinearLayout llMyOrder;
+	@ViewInject(R.id.ll_my_settings)
+	private LinearLayout llMySettings;
+	@ViewInject(R.id.ll_my_exit)
+	private LinearLayout llMyExit;
+
 	private Intent intent;
+
 	private DangApplication app;
 	private IMinePresenter presenter;
 
@@ -57,11 +71,13 @@ public class MineFragment extends Fragment implements IMineView,
 		super.onResume();
 	}
 
-
-
 	private void setListeners() {
 		ivLoginPhoto.setOnClickListener(this);
-
+		llMyCollect.setOnClickListener(this);
+		llMyAddress.setOnClickListener(this);
+		llMyOrder.setOnClickListener(this);
+		llMySettings.setOnClickListener(this);
+		llMyExit.setOnClickListener(this);
 	}
 
 	@Override
@@ -71,7 +87,9 @@ public class MineFragment extends Fragment implements IMineView,
 			intent = new Intent(getActivity(), LoginActivity.class);
 			startActivityForResult(intent, GlobalConsts.RESULT_OK);
 			break;
-
+		case R.id.ll_my_address:
+			intent=new Intent(getActivity(),AddressActivity.class);
+			startActivity(intent);
 		default:
 			break;
 		}

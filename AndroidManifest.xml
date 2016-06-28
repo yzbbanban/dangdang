@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name="com.wangban.dangdang.app.DangApplication"
         android:allowBackup="true"
@@ -41,6 +42,10 @@
         <activity
             android:name="com.wangban.dangdang.activity.LoginActivity"
             android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name="com.wangban.dangdang.activity.AddressActivity"
+            android:label="@string/title_activity_address" >
         </activity>
     </application>
 

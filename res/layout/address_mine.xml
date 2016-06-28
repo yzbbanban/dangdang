@@ -2,28 +2,143 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-<!-- address.receiveName 接收人姓名 -->
-<!-- address.full_address 完整地址 -->
-<!-- address.postalCode 邮政编码 -->
-<!-- address.mobile 联系手机 -->
-<!-- address.phone 联系电话  -->
+    android:background="@drawable/mine_bg_add_address"
+    android:orientation="vertical"
+    android:padding="5dp" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp" >
-        <TextView 
-            android:layout_width="wrap_content"
+
+        <TextView
+            android:layout_width="80dp"
             android:layout_height="match_parent"
-            android:text="接收人姓名"
             android:gravity="center"
-            android:textColor="@color/darkGrey"
-            />
-        <EditText 
-            android:id="@+id/et_address_name"
+            android:paddingLeft="10dp"
+            android:text="接收人姓名"
+            android:textColor="@color/darkGrey" />
+
+        <EditText
+            android:id="@+id/et_address_receive_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            />
+            android:background="@null"
+            android:paddingLeft="10dp" />
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/darkGrey" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:text="收货地址"
+            android:textColor="@color/darkGrey" />
+
+        <EditText
+            android:id="@+id/et_address_full_address"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:paddingLeft="10dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/darkGrey" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:text="邮政编码"
+            android:textColor="@color/darkGrey" />
+
+        <EditText
+            android:id="@+id/et_address_postal_code"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:paddingLeft="10dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/darkGrey" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:text="联系手机"
+            android:textColor="@color/darkGrey" />
+
+        <EditText
+            android:id="@+id/et_address_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:paddingLeft="10dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/darkGrey" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:text="联系电话"
+            android:textColor="@color/darkGrey" />
+
+        <EditText
+            android:id="@+id/et_address_phone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:paddingLeft="10dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/darkGrey" />
+
+    <Button
+        android:id="@+id/btn_address_add"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/mine_address_btn_submit"
+        android:text="添加地址"
+        android:textColor="#ffffff" />
 
 </LinearLayout>

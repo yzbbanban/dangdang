@@ -64,5 +64,6 @@
     <string name="title_activity_cart_info">CartInfoActivity</string>
     <string name="title_activity_regist">RegistActivity</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_address">AddressActivity</string>
 
 </resources>
