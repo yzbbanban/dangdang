@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wangban.dangdang"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <application
+        android:name="com.wangban.dangdang.app.DangApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        <activity
+            android:name="com.wangban.dangdang.activity.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.wangban.dangdang.activity.BookDetailActivity"
+            android:label="@string/title_activity_book_detail" >
+        </activity>
+        <activity
+            android:name="com.wangban.dangdang.activity.CartInfoActivity"
+            android:label="@string/title_activity_cart_info" >
+        </activity>
+        <activity
+            android:name="com.wangban.dangdang.activity.RegistActivity"
+            android:label="@string/title_activity_regist" >
+        </activity>
+        <activity
+            android:name="com.wangban.dangdang.activity.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+    </application>
+
+</manifest>
