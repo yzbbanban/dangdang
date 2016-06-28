@@ -1,8 +1,13 @@
 package com.wangban.dangdang.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.wangban.dangdang.entity.Address;
 import com.wangban.dangdang.entity.User;
 
 /**
@@ -24,5 +29,23 @@ public class JSONParser {
 		return user;
 	}
 
+	public static List<Address> parseAddress(JSONArray jsonArray)
+			throws JSONException {
+		List<Address> addresses = new ArrayList<Address>();
+		for (int i = 0; i < jsonArray.length(); i++) {
+			JSONObject obj = jsonArray.getJSONObject(i);
+			Address address = new Address();
+			address.setFull_address(obj.getString("full_address"));
+			address.setId(obj.getInt("id"));
+			address.setIs_default(obj.getInt("is_default"));
+			address.setFull_address(obj.getString("mobile"));
+			address.setPhone(obj.getString("phone"));
+			address.setPostalCode(obj.getString("postalCode"));
+			address.setReceiveName(obj.getString("receiveName"));
+			address.setUserId(obj.getInt("userId"));
+			addresses.add(address);
+		}
+		return addresses;
+	}
 
 }

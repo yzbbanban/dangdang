@@ -64,13 +64,14 @@ public class AddressAdapter extends BaseAdapter {
 					.findViewById(R.id.rbtn_address_edit);
 			holder.rbtnAddressDelete = (RadioButton) convertView
 					.findViewById(R.id.rbtn_address_delete);
-			
+
 			convertView.setTag(holder);
 		}
-		holder=(ViewHolder) convertView.getTag();
-		
-		
-		
+		holder = (ViewHolder) convertView.getTag();
+		holder.tvAddressUserName.setText(address.getReceiveName());
+		holder.tvAddressUserPhone.setText(address.getPhone());
+		holder.tvAddressUserAddress.setText(address.getFull_address());
+
 		return convertView;
 	}
 

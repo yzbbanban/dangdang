@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.graphics.drawable.ColorDrawable;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -76,6 +77,7 @@ public class AddressDialog extends Dialog {
 				address.setReceiveName(etAddressReceiveName.getText()
 						.toString());
 				address.setMobile(etAddressMobile.getText().toString());
+				//Log.i("supergirl","AddressDialog: "+address.toString());
 				callback.onSubmit(address);
 				
 			}

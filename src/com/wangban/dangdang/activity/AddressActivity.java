@@ -18,6 +18,7 @@ import com.wangban.dangdang.view.AddressDialog.Callback;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -49,7 +50,7 @@ public class AddressActivity extends Activity implements IAddressView,
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_address);
 		x.view().inject(this);
-
+		presenter.listAddress();
 		setListeners();
 	}
 
@@ -67,6 +68,8 @@ public class AddressActivity extends Activity implements IAddressView,
 				@Override
 				public void onSubmit(Address address) {
 					AddressActivity.this.address = address;
+					// Log.i("supergirl","addressActivity: "+
+					// address.toString());
 					presenter.loadAddress(address);
 				}
 			});
@@ -81,7 +84,11 @@ public class AddressActivity extends Activity implements IAddressView,
 
 	@Override
 	public void setData(List<Address> addresses) {
-		this.addresses = addresses;
+		if (addresses != null) {
+			this.addresses = addresses;
+		} else {
+			Toast.makeText(this, "还没有保存地址", Toast.LENGTH_SHORT).show();
+		}
 
 	}
 
@@ -95,6 +102,8 @@ public class AddressActivity extends Activity implements IAddressView,
 	@Override
 	public void addAddressSuccess() {
 		Toast.makeText(this, "添加成功", Toast.LENGTH_SHORT).show();
+		dialog.dismiss();
+		presenter.listAddress();
 	}
 
 	@Override

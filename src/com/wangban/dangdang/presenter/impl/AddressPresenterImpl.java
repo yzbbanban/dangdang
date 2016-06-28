@@ -53,7 +53,7 @@ public class AddressPresenterImpl implements IAddressPresenter {
 
 			@Override
 			public void missData(Object object) {
-				// TODO Auto-generated method stub
+				view.setData(null);
 
 			}
 
