@@ -11,6 +11,7 @@ public class GlobalConsts {
 	public static final String URL_USER_REGIST = BASEURL + "user/register.action";
 	public static final String URL_USER_LOGIN = BASEURL + "/user/login.action";
 	public static final String URL_USER_LOGINEITHOUTPWD = BASEURL + "/user/loginWithoutPwd.action";
+	public static final String URL_USER_ADD_ADDRESS = BASEURL + "/order/saveAddress.action";
 	public static final int RESPONSE_CODE_SUCCESS = 1001;
 	public static final int RESULT_OK = 100;
 }

@@ -32,7 +32,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tv_address_user_phone"
+        android:id="@+id/tv_address_user_address"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginLeft="10dp"

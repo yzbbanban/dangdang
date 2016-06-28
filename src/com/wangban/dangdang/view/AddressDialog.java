@@ -78,7 +78,6 @@ public class AddressDialog extends Dialog {
 				address.setMobile(etAddressMobile.getText().toString());
 				callback.onSubmit(address);
 				
-				
 			}
 		});
 	}

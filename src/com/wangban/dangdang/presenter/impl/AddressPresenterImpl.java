@@ -22,7 +22,26 @@ public class AddressPresenterImpl implements IAddressPresenter {
 	}
 
 	@Override
-	public void loadAddress() {
+	public void loadAddress(Address address) {
+		model.AddAddress(address, new IModelCallback() {
+			@Override
+			public void findData(Object object) {
+				view.addAddressSuccess();
+			}
+
+			@Override
+			public void missData(Object object) {
+				String message=(String) object;
+				view.addAddressFail(message);
+
+			}
+
+		});
+
+	}
+
+	@Override
+	public void listAddress() {
 		model.getAddress(new IModelCallback() {
 
 			@Override
