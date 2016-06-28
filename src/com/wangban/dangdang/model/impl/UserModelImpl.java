@@ -56,7 +56,7 @@ public class UserModelImpl implements IUserModel {
 			protected Response<Bitmap> parseNetworkResponse(
 					NetworkResponse response) {
 				Map<String, String> headers = response.headers;
-				String sessionid = headers.get("Set-cookie");
+				String sessionid = headers.get("Set-Cookie");
 				if (sessionid != null) {
 					CommonRequest.JSESSIONID = sessionid.split(";")[0];
 				}
@@ -69,6 +69,7 @@ public class UserModelImpl implements IUserModel {
 	@Override
 	public void regist(final User user, final String code,
 			final IModelCallback callback) {
+		Log.i("supergirl", "model: "+user.toString());
 		String url = GlobalConsts.URL_USER_REGIST;
 		CommonRequest request = new CommonRequest(Request.Method.POST, url,
 				new Listener<String>() {
@@ -76,23 +77,18 @@ public class UserModelImpl implements IUserModel {
 					@Override
 					public void onResponse(String response) {
 						try {
-							Log.i("supergirl", "response" + response);
+							//Log.i("supergirl", "response" + response);
 							JSONObject object = new JSONObject(response);
 							if (object.getInt("code") == GlobalConsts.RESPONSE_CODE_SUCCESS) {
 								callback.findData(null);
 							}
-
 						} catch (JSONException e) {
-							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-
 					}
 				}, new ErrorListener() {
-
 					@Override
 					public void onErrorResponse(VolleyError error) {
-						// TODO Auto-generated method stub
 
 					}
 				}) {
@@ -103,7 +99,6 @@ public class UserModelImpl implements IUserModel {
 				map.put("user.nickname", user.getNickname());
 				map.put("user.password", user.getPassword());
 				map.put("number", code);
-
 				return map;
 			}
 		};

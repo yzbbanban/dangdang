@@ -8,7 +8,7 @@ import com.wangban.dangdang.R.layout;
 import com.wangban.dangdang.R.menu;
 import com.wangban.dangdang.entity.User;
 import com.wangban.dangdang.presenter.IRegistPresenter;
-import com.wangban.dangdang.presenter.RegistPresenterImpl;
+import com.wangban.dangdang.presenter.impl.RegistPresenterImpl;
 import com.wangban.dangdang.view.IRegistView;
 
 import android.os.Bundle;
@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,13 +31,13 @@ public class RegistActivity extends Activity implements IRegistView,
 	private ImageView ivRegistCode;
 
 	@ViewInject(R.id.et_regist_email)
-	private TextView tvRegistEmail;
+	private EditText etRegisttEmail;
 	@ViewInject(R.id.et_regist_password)
-	private TextView tvRegistPassword;
+	private EditText etRegistPassword;
 	@ViewInject(R.id.et_regist_realname)
-	private TextView tvRegistRealname;
+	private EditText etRegistRealname;
 	@ViewInject(R.id.et_regist_code)
-	private TextView tvRegistCode;
+	private EditText etRegistCode;
 	@ViewInject(R.id.btn_regist)
 	private Button btnRegist;
 	@ViewInject(R.id.ibtn_regist_back)
@@ -59,10 +60,11 @@ public class RegistActivity extends Activity implements IRegistView,
 
 	private void setData() {
 		User user = new User();
-		user.setEmail(tvRegistEmail.getText().toString());
-		user.setPassword(tvRegistPassword.getText().toString());
-		user.setNickname(tvRegistRealname.getText().toString());
-		String code = tvRegistCode.getText().toString();
+		user.setEmail(etRegisttEmail.getText().toString());
+		user.setPassword(etRegistPassword.getText().toString());
+		user.setNickname(etRegistRealname.getText().toString());
+		String code = etRegistCode.getText().toString();
+		//Log.i("supergirl", user.toString());
 		presenter.regist(user, code);
 	}
 
@@ -92,6 +94,7 @@ public class RegistActivity extends Activity implements IRegistView,
 			break;
 		case R.id.btn_regist:
 			setData();
+			
 		case R.id.ibtn_regist_back:
 			finish();
 			overridePendingTransition(R.anim.zoom_exit, R.anim.zoom_enter);

@@ -1,4 +1,4 @@
-package com.wangban.dangdang.presenter;
+package com.wangban.dangdang.presenter.impl;
 
 import android.graphics.Bitmap;
 import android.util.Log;
@@ -7,6 +7,7 @@ import com.wangban.dangdang.entity.User;
 import com.wangban.dangdang.model.IModelCallback;
 import com.wangban.dangdang.model.IUserModel;
 import com.wangban.dangdang.model.impl.UserModelImpl;
+import com.wangban.dangdang.presenter.IRegistPresenter;
 import com.wangban.dangdang.view.IRegistView;
 
 /**
@@ -38,10 +39,12 @@ public class RegistPresenterImpl implements IRegistPresenter {
 
 	@Override
 	public void regist(User user, String code) {
+		Log.i("supergirl", user.toString());
 		model.regist(user, code, new IModelCallback() {
 			
 			@Override
 			public void findData(Object object) {
+				Log.i("supergirl", "regist presenter");
 				view.registSuccess();
 			}
 		});

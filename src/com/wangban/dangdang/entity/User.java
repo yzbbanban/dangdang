@@ -105,4 +105,13 @@ public class User {
 		this.userIntegral = userIntegral;
 	}
 
+	@Override
+	public String toString() {
+		return "User [email=" + email + ", emailVerify=" + emailVerify
+				+ ", emailVerifyCode=" + emailVerifyCode + ", id=" + id
+				+ ", lastLoginIp=" + lastLoginIp + ", lastLoginTime="
+				+ lastLoginTime + ", nickname=" + nickname + ", password="
+				+ password + ", userIntegral=" + userIntegral + "]";
+	}
+
 }
