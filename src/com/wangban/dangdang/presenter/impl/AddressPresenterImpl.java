@@ -5,9 +5,9 @@ import java.util.List;
 import android.util.Log;
 
 import com.wangban.dangdang.entity.Address;
-import com.wangban.dangdang.model.AddressModelImpl;
 import com.wangban.dangdang.model.IAddressModel;
 import com.wangban.dangdang.model.IModelCallback;
+import com.wangban.dangdang.model.impl.AddressModelImpl;
 import com.wangban.dangdang.presenter.IAddressPresenter;
 import com.wangban.dangdang.view.IAddressView;
 

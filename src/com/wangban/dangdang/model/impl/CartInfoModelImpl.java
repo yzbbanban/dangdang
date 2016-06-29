@@ -1,4 +1,4 @@
-package com.wangban.dangdang.model;
+package com.wangban.dangdang.model.impl;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -10,6 +10,8 @@ import com.google.gson.JsonParser;
 import com.wangban.dangdang.app.DangApplication;
 import com.wangban.dangdang.consts.GlobalConsts;
 import com.wangban.dangdang.entity.Address;
+import com.wangban.dangdang.model.ICartInfoModel;
+import com.wangban.dangdang.model.IModelCallback;
 import com.wangban.dangdang.util.CommonRequest;
 import com.wangban.dangdang.util.JSONParser;
 

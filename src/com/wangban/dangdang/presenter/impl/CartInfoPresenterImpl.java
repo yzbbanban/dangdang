@@ -1,9 +1,10 @@
-package com.wangban.dangdang.presenter;
+package com.wangban.dangdang.presenter.impl;
 
 import com.wangban.dangdang.entity.Address;
-import com.wangban.dangdang.model.CartInfoModelImpl;
 import com.wangban.dangdang.model.ICartInfoModel;
 import com.wangban.dangdang.model.IModelCallback;
+import com.wangban.dangdang.model.impl.CartInfoModelImpl;
+import com.wangban.dangdang.presenter.ICartInfoPresenter;
 import com.wangban.dangdang.view.ICartInfoView;
 
 /**

@@ -27,6 +27,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.TextView;
 
 public class StoreFragment extends Fragment implements IStoreView {
 	private StoreAdapter recommondAdapter;
@@ -44,6 +45,9 @@ public class StoreFragment extends Fragment implements IStoreView {
 	private IStorePresenter presenter;
 	@ViewInject(R.id.et_search_store_book)
 	private EditText etSearch;
+	@ViewInject(R.id.tv_store_type)
+	private TextView tvStoreType;
+
 	public StoreFragment() {
 		presenter = new StorePresenterImpl(this);
 	}
@@ -52,7 +56,7 @@ public class StoreFragment extends Fragment implements IStoreView {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.store_fragment, null);
-		x.view().inject(this,view);
+		x.view().inject(this, view);
 		etSearch.clearFocus();
 		presenter.loadRecommondBookData();
 		presenter.loadNewBookData();
@@ -67,7 +71,7 @@ public class StoreFragment extends Fragment implements IStoreView {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				//Log.i("supergirl", "1111");
+				// Log.i("supergirl", "1111");
 				Book book = recommendBooks.get(position);
 				Intent intent = new Intent(getActivity(),
 						BookDetailActivity.class);
@@ -107,7 +111,6 @@ public class StoreFragment extends Fragment implements IStoreView {
 		});
 
 	}
-
 
 	@Override
 	public void showRecommendBookList(List<Book> books) {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+     >
 
     <RelativeLayout
         android:id="@+id/ll_title_store"
@@ -22,7 +22,7 @@
             android:src="@drawable/shouye_arrow_down" />
 
         <TextView
-            android:id="@+id/tv_store_fenlei"
+            android:id="@+id/tv_store_type"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
@@ -38,7 +38,7 @@
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/tv_store_fenlei"
+            android:layout_toRightOf="@id/tv_store_type"
             android:background="@drawable/shouye_bg_input" >
 
             <EditText
@@ -62,12 +62,17 @@
                 android:src="@drawable/shouye_ico_search" />
         </RelativeLayout>
     </RelativeLayout>
-
+	
+    
+    
+    
     <ScrollView
+        android:layout_below="@id/ll_title_store"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
         <LinearLayout
+            
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical" >
@@ -96,8 +101,8 @@
                     android:id="@+id/gv_store_recommend_book"
                     android:layout_width="match_parent"
                     android:layout_height="240dp"
-                    android:horizontalSpacing="3dp"
                     android:layout_below="@id/tv_store_book_edit_att"
+                    android:horizontalSpacing="3dp"
                     android:numColumns="4" >
                 </GridView>
             </RelativeLayout>
@@ -126,8 +131,8 @@
                     android:id="@+id/gv_store_new_book"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:horizontalSpacing="3dp"
                     android:layout_below="@id/tv_store_book_hot_att"
+                    android:horizontalSpacing="3dp"
                     android:numColumns="4" >
                 </GridView>
             </RelativeLayout>
@@ -156,12 +161,12 @@
                     android:id="@+id/gv_store_hot_book"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:horizontalSpacing="3dp"
                     android:layout_below="@id/tv_store_book_new_att"
+                    android:horizontalSpacing="3dp"
                     android:numColumns="4" >
                 </GridView>
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 
-</LinearLayout>
+</RelativeLayout>

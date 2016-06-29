@@ -77,6 +77,10 @@ public class Cart implements Serializable{
 		}
 		saveCart();
 	}
+	/**
+	 * 计算items中的总数量
+	 * @return
+	 */
 	public int getTotalCount(){
 		int counts = 0;
 		for (int i = 0; i <items.size(); i++) {

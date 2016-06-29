@@ -65,5 +65,6 @@
     <string name="title_activity_regist">RegistActivity</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_address">AddressActivity</string>
+    <string name="title_activity_order">OrderActivity</string>
 
 </resources>

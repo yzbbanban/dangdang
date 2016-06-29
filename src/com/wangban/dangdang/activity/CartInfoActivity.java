@@ -14,8 +14,8 @@ import com.wangban.dangdang.entity.Address;
 import com.wangban.dangdang.entity.Book;
 import com.wangban.dangdang.entity.Cart;
 import com.wangban.dangdang.entity.CartItem;
-import com.wangban.dangdang.presenter.CartInfoPresenterImpl;
 import com.wangban.dangdang.presenter.ICartInfoPresenter;
+import com.wangban.dangdang.presenter.impl.CartInfoPresenterImpl;
 import com.wangban.dangdang.view.ICartInfoView;
 
 import android.os.Bundle;
@@ -24,6 +24,7 @@ import android.content.Intent;
 import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.Button;
@@ -61,7 +62,15 @@ public class CartInfoActivity extends Activity implements ICartInfoView {
 	}
 
 	private void setListeners() {
-		// TODO Auto-generated method stub
+		btnCartInfoSubmit.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(CartInfoActivity.this,
+						OrderActivity.class));
+
+			}
+		});
 
 	}
 
@@ -83,9 +92,10 @@ public class CartInfoActivity extends Activity implements ICartInfoView {
 				+ "</font><br/>收货电话：<font color='red'>" + phone
 				+ "</font><br/>收货地址：<font color='red'>" + adds + "</font>";
 		tvCartInfo.setText(Html.fromHtml(text));
-		int counts=DangApplication.getCart().getTotalCount();
-		double price=DangApplication.getCart().getTotalPrice();
-		String totalPrice = "共<font color='red'>"+counts+"</font>件，总金额：￥ <font color='red'>"+price+"</font>" ;
+		int counts = DangApplication.getCart().getTotalCount();
+		double price = DangApplication.getCart().getTotalPrice();
+		String totalPrice = "共<font color='red'>" + counts
+				+ "</font>件，总金额：￥ <font color='red'>" + price + "</font>";
 		tvTotalPriceCount.setText(Html.fromHtml(totalPrice));
 
 	}

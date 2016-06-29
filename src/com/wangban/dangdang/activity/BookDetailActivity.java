@@ -173,7 +173,7 @@ public class BookDetailActivity extends Activity implements IBookDetialView,
 
 	@Override
 	public void addCartFail() {
-		Toast.makeText(this, "Ìí¼ÓÊ§°Ü£¬Çë¼ì²éÍøÂç", Toast.LENGTH_SHORT).show();
+		//Toast.makeText(this, "Ìí¼ÓÊ§°Ü£¬Çë¼ì²éÍøÂç", Toast.LENGTH_SHORT).show();
 
 	}
 }

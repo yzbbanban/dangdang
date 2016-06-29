@@ -47,6 +47,10 @@
             android:name="com.wangban.dangdang.activity.AddressActivity"
             android:label="@string/title_activity_address" >
         </activity>
+        <activity
+            android:name="com.wangban.dangdang.activity.OrderActivity"
+            android:label="@string/title_activity_order" >
+        </activity>
     </application>
 
 </manifest>

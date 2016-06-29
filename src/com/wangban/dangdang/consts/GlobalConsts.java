@@ -23,6 +23,10 @@ public class GlobalConsts {
 			+ "/order/setAddDefault.action";
 	public static final String URL_LOAD_DEFAULT_ADDRESS = BASEURL
 			+ "order/getDefaultAddress.action";
+	public static final String URL_LOAD_BOOK_TYPE = BASEURL
+			+ "main/getcat.action";
+	public static final String URL_LOAD_ORDER = BASEURL
+			+ "/order/findAll.action";
 
 	public static final int RESPONSE_CODE_SUCCESS = 1001;
 	public static final int RESULT_OK = 100;
