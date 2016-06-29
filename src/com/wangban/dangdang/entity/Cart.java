@@ -77,7 +77,13 @@ public class Cart implements Serializable{
 		}
 		saveCart();
 	}
-
+	public int getTotalCount(){
+		int counts = 0;
+		for (int i = 0; i <items.size(); i++) {
+			counts+=items.get(i).getCount();
+		}
+		return counts;
+	}
 	/**
 	 * 获取总价格
 	 */

@@ -12,6 +12,7 @@ import com.wangban.dangdang.adapter.CartInfoAdapter;
 import com.wangban.dangdang.app.DangApplication;
 import com.wangban.dangdang.entity.Address;
 import com.wangban.dangdang.entity.Book;
+import com.wangban.dangdang.entity.Cart;
 import com.wangban.dangdang.entity.CartItem;
 import com.wangban.dangdang.presenter.CartInfoPresenterImpl;
 import com.wangban.dangdang.presenter.ICartInfoPresenter;
@@ -70,7 +71,7 @@ public class CartInfoActivity extends Activity implements ICartInfoView {
 		lvCartInfo.setAdapter(adapter);
 		listViewAnim();
 		presenter.loadDefaultAddress();
-		Log.i("supergirl", "cartInfoView");
+		// Log.i("supergirl", "cartInfoView");
 	}
 
 	@Override
@@ -82,6 +83,10 @@ public class CartInfoActivity extends Activity implements ICartInfoView {
 				+ "</font><br/>收货电话：<font color='red'>" + phone
 				+ "</font><br/>收货地址：<font color='red'>" + adds + "</font>";
 		tvCartInfo.setText(Html.fromHtml(text));
+		int counts=DangApplication.getCart().getTotalCount();
+		double price=DangApplication.getCart().getTotalPrice();
+		String totalPrice = "共<font color='red'>"+counts+"</font>件，总金额：￥ <font color='red'>"+price+"</font>" ;
+		tvTotalPriceCount.setText(Html.fromHtml(totalPrice));
 
 	}
 
