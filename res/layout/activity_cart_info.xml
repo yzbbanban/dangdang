@@ -1,10 +1,11 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EEEEEE"
+    android:orientation="vertical"
     tools:context=".CartInfoActivity" >
-	
+
     <RelativeLayout
         android:id="@+id/rl_book_order"
         android:layout_width="match_parent"
@@ -19,19 +20,84 @@
             android:textColor="#ffffff"
             android:textSize="20sp" />
     </RelativeLayout>
-    
-    <LinearLayout 
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/lightGrey" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:orientation="horizontal"
-        >
-        <ImageView 
+        android:padding="5dp" >
+
+        <ImageView
             android:id="@+id/tv_local_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-        
-        
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/order_ico_position" />
+
+        <TextView
+            android:id="@+id/tv_cart_info"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="收货人：韩梅梅\n收货电话15555555555\n收货地址：冰岛"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btn_edit_default_address"
+            android:layout_width="10dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/order_ico_rightpointer" />
     </LinearLayout>
-    
-</RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/lightGrey" />
+
+    <ListView
+        android:id="@+id/lv_cart_info"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </ListView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/lightGrey" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp" >
+
+        <Button
+            android:id="@+id/btn_cart_info_submit"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@color/darkRed"
+            android:text="提交订单"
+            android:textColor="#ffffff"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_total_price_count"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/btn_cart_info_submit"
+            android:gravity="center"
+            android:text="共3件，总金额：￥1620.0"
+            android:textColor="#000000"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+</LinearLayout>

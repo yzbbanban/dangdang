@@ -1,6 +1,7 @@
 <resources>
 	<color name="darkBroun">#B8812F</color>
 	<color name="darkGrey">#999999</color>
+	<color name="lightGrey">#dddddd</color>
 	<color name="darkRed">#C7060F</color>
     <!--
         Base application theme, dependent on API level. This theme is replaced

@@ -6,6 +6,7 @@ import org.xutils.x;
 import org.xutils.view.annotation.ViewInject;
 
 import com.wangban.dangdang.R;
+import com.wangban.dangdang.activity.CartInfoActivity;
 import com.wangban.dangdang.adapter.CartAdapter;
 import com.wangban.dangdang.app.DangApplication;
 import com.wangban.dangdang.entity.Book;
@@ -14,6 +15,7 @@ import com.wangban.dangdang.presenter.ICartPresenter;
 import com.wangban.dangdang.presenter.impl.CartPresenterImpl;
 import com.wangban.dangdang.view.ICartView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -34,12 +36,16 @@ public class CartFragment extends Fragment implements ICartView {
 	private TextView tv_cart_total;
 	@ViewInject(R.id.btn_editor)
 	private Button btn_editor;
+	@ViewInject(R.id.btn_cart_submit)
+	private Button btnCartSubmit;
+	
 	private Book book;
 
 	private CartAdapter adapter;
 	private List<CartItem> items;
 
 	private ICartPresenter cartPresenter;
+	private Intent intent;
 
 	public CartFragment() {
 		cartPresenter = new CartPresenterImpl(this);
@@ -52,6 +58,12 @@ public class CartFragment extends Fragment implements ICartView {
 		x.view().inject(this, view);
 		setData();
 		// ÏÔÊ¾»òÒþ²Ø¡°É¾³ý¡±°´¼ü
+		setListeners();
+
+		return view;
+	}
+
+	private void setListeners() {
 		btn_editor.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -60,7 +72,18 @@ public class CartFragment extends Fragment implements ICartView {
 				adapter.notifyDataSetChanged();
 			}
 		});
-		return view;
+
+		btnCartSubmit.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				intent = new Intent(CartFragment.this.getActivity(),
+						CartInfoActivity.class);
+				intent.putExtra("book", book);
+				startActivity(intent);
+			}
+		});
+
 	}
 
 	private void setData() {
@@ -69,12 +92,12 @@ public class CartFragment extends Fragment implements ICartView {
 
 	@Override
 	public void onResume() {
-		
+
 		if (items != null) {
 			tvNoBook.setVisibility(View.INVISIBLE);
 			setAdapter();
 		}
-		
+
 		super.onResume();
 	}
 
@@ -90,8 +113,9 @@ public class CartFragment extends Fragment implements ICartView {
 		// Log.i("supergirl", "updateView: "+totalPrice);
 		tv_cart_total.setText(totalPrice + "£¤");
 	}
+
 	@Override
-	public void setVisible(){
+	public void setVisible() {
 		tvNoBook.setVisibility(View.VISIBLE);
-	} 
+	}
 }

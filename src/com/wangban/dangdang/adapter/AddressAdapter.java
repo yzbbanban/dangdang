@@ -116,7 +116,7 @@ public class AddressAdapter extends BaseAdapter {
 				boolean isChecked) {
 			Address address = getItem(position);
 			int id = address.getId();
-			Log.i("supergirl", "id: "+id);
+			Log.i("supergirl", "id: " + id);
 			presenter.setAddDefault(id);
 		}
 	}
