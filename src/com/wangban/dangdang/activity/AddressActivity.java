@@ -97,7 +97,7 @@ public class AddressActivity extends Activity implements IAddressView,
 		adapter = new AddressAdapter(this, addresses);
 		lvAddressManager.setAdapter(adapter);
 		adapter.setPresenter(presenter);
-
+		adapter.notifyDataSetChanged();
 	}
 
 	@Override

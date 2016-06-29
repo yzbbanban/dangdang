@@ -115,10 +115,8 @@ public class AddressModelImpl implements IAddressModel {
 	}
 
 	@Override
-	public void setAddDefault(int id, IModelCallback callback) {
-		String url = GlobalConsts.URL_USER_SET_ADDRESS_DEFAULT + "?id=-" +
-				"" +
-				"" + id;
+	public void setAddDefault(int id, final IModelCallback callback) {
+		String url = GlobalConsts.URL_USER_SET_ADDRESS_DEFAULT + "?id="+ id;
 		CommonRequest request = new CommonRequest(url, new Listener<String>() {
 
 			@Override
@@ -126,7 +124,7 @@ public class AddressModelImpl implements IAddressModel {
 				try {
 					JSONObject object = new JSONObject(response);
 					if (object.getInt("code")==GlobalConsts.RESPONSE_CODE_SUCCESS) {
-						
+						callback.findData(null);
 					}else {
 						object.getString("error_msg");
 						

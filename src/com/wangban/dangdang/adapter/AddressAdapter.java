@@ -10,6 +10,7 @@ import com.wangban.dangdang.presenter.IAddressPresenter;
 import com.wangban.dangdang.presenter.impl.AddressPresenterImpl;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -115,8 +116,8 @@ public class AddressAdapter extends BaseAdapter {
 				boolean isChecked) {
 			Address address = getItem(position);
 			int id = address.getId();
+			Log.i("supergirl", "id: "+id);
 			presenter.setAddDefault(id);
-			notifyDataSetChanged();
 		}
 	}
 

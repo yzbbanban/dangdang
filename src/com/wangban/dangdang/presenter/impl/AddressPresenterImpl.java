@@ -2,6 +2,8 @@ package com.wangban.dangdang.presenter.impl;
 
 import java.util.List;
 
+import android.util.Log;
+
 import com.wangban.dangdang.entity.Address;
 import com.wangban.dangdang.model.AddressModelImpl;
 import com.wangban.dangdang.model.IAddressModel;
@@ -66,6 +68,7 @@ public class AddressPresenterImpl implements IAddressPresenter {
 		model.setAddDefault(id, new IModelCallback() {
 			@Override
 			public void findData(Object object) {
+				//Log.i("supergirl", "setAddDefault");
 				listAddress();
 			}
 
