@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:padding="10dp" >
+
+    <ImageView
+        android:id="@+id/iv_cart_info_delete"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/cart_ico_del"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_cart_info_book"
+        android:layout_width="85dp"
+        android:layout_height="120dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/iv_cart_info_delete"
+        android:src="@drawable/touxiang" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/iv_cart_info_book"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_cart_info_book_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="花千骨"
+            android:textColor="@color/darkGrey"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_cart_info_book_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28 ￥"
+                android:textColor="@color/darkRed" />
+
+            <TextView
+                android:id="@+id/tv_cart_info_book_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="x2"
+                android:textColor="@color/darkGrey" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_cart_info_book_total_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:text="￥180.0"
+        android:textColor="@color/darkRed" />
+
+</RelativeLayout>

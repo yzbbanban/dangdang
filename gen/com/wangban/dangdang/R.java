@@ -9,10 +9,11 @@ package com.wangban.dangdang;
 
 public final class R {
     public static final class anim {
-        public static final int fade=0x7f040000;
-        public static final int hold=0x7f040001;
-        public static final int zoom_enter=0x7f040002;
-        public static final int zoom_exit=0x7f040003;
+        public static final int anim_item_listview=0x7f040000;
+        public static final int fade=0x7f040001;
+        public static final int hold=0x7f040002;
+        public static final int zoom_enter=0x7f040003;
+        public static final int zoom_exit=0x7f040004;
     }
     public static final class attr {
     }
@@ -85,7 +86,7 @@ public final class R {
         public static final int xiangqing_button=0x7f020031;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0067;
+        public static final int action_settings=0x7f0a006d;
         public static final int btn_add_cart=0x7f0a0010;
         public static final int btn_address_add=0x7f0a0000;
         public static final int btn_book_detial_collect=0x7f0a000d;
@@ -113,33 +114,35 @@ public final class R {
         public static final int et_regist_email=0x7f0a0027;
         public static final int et_regist_password=0x7f0a0028;
         public static final int et_regist_realname=0x7f0a0029;
-        public static final int et_search_store_book=0x7f0a005e;
-        public static final int gv_store_hot_book=0x7f0a0066;
-        public static final int gv_store_new_book=0x7f0a0064;
-        public static final int gv_store_recommend_book=0x7f0a0062;
+        public static final int et_search_store_book=0x7f0a0064;
+        public static final int gv_store_hot_book=0x7f0a006c;
+        public static final int gv_store_new_book=0x7f0a006a;
+        public static final int gv_store_recommend_book=0x7f0a0068;
         public static final int ibtn_new_user=0x7f0a001d;
-        public static final int ibtn_store_fenlei=0x7f0a005b;
-        public static final int imageView1=0x7f0a005f;
+        public static final int ibtn_store_fenlei=0x7f0a0061;
+        public static final int imageView1=0x7f0a0065;
         public static final int iv_book_detial=0x7f0a0005;
         public static final int iv_book_detial_background=0x7f0a0004;
         public static final int iv_cart_book=0x7f0a003f;
         public static final int iv_cart_delete=0x7f0a003e;
-        public static final int iv_my_address=0x7f0a004f;
-        public static final int iv_my_collect=0x7f0a004c;
-        public static final int iv_my_exit=0x7f0a0058;
-        public static final int iv_my_order=0x7f0a0052;
-        public static final int iv_my_settings=0x7f0a0055;
+        public static final int iv_cart_info_book=0x7f0a0047;
+        public static final int iv_cart_info_delete=0x7f0a0046;
+        public static final int iv_my_address=0x7f0a0055;
+        public static final int iv_my_collect=0x7f0a0052;
+        public static final int iv_my_exit=0x7f0a005e;
+        public static final int iv_my_order=0x7f0a0058;
+        public static final int iv_my_settings=0x7f0a005b;
         public static final int iv_regist_code=0x7f0a002b;
-        public static final int iv_store_book=0x7f0a0046;
+        public static final int iv_store_book=0x7f0a004c;
         public static final int linearLayout1=0x7f0a0006;
         public static final int ll_activity=0x7f0a001f;
-        public static final int ll_my_address=0x7f0a004e;
-        public static final int ll_my_collect=0x7f0a004b;
-        public static final int ll_my_exit=0x7f0a0057;
-        public static final int ll_my_order=0x7f0a0051;
-        public static final int ll_my_settings=0x7f0a0054;
-        public static final int ll_title_store=0x7f0a005a;
-        public static final int login_photo=0x7f0a0049;
+        public static final int ll_my_address=0x7f0a0054;
+        public static final int ll_my_collect=0x7f0a0051;
+        public static final int ll_my_exit=0x7f0a005d;
+        public static final int ll_my_order=0x7f0a0057;
+        public static final int ll_my_settings=0x7f0a005a;
+        public static final int ll_title_store=0x7f0a0060;
+        public static final int login_photo=0x7f0a004f;
         public static final int lv_address_manager=0x7f0a0001;
         public static final int lv_cart=0x7f0a0033;
         public static final int lv_cart_info=0x7f0a0015;
@@ -153,7 +156,7 @@ public final class R {
         public static final int rl_book_detail_introduse=0x7f0a0003;
         public static final int rl_book_detial=0x7f0a0002;
         public static final int rl_book_order=0x7f0a0011;
-        public static final int rl_search_store_book=0x7f0a005d;
+        public static final int rl_search_store_book=0x7f0a0063;
         public static final int tv_address_user_address=0x7f0a003a;
         public static final int tv_address_user_name=0x7f0a0038;
         public static final int tv_address_user_phone=0x7f0a0039;
@@ -168,24 +171,28 @@ public final class R {
         public static final int tv_cart_book_price=0x7f0a0041;
         public static final int tv_cart_book_total_count=0x7f0a0044;
         public static final int tv_cart_info=0x7f0a0013;
+        public static final int tv_cart_info_book_count=0x7f0a004a;
+        public static final int tv_cart_info_book_name=0x7f0a0048;
+        public static final int tv_cart_info_book_price=0x7f0a0049;
+        public static final int tv_cart_info_book_total_price=0x7f0a004b;
         public static final int tv_cart_total=0x7f0a0036;
         public static final int tv_describe=0x7f0a000f;
         public static final int tv_local_icon=0x7f0a0012;
-        public static final int tv_mine_name=0x7f0a004a;
-        public static final int tv_mine_title=0x7f0a0048;
-        public static final int tv_my_address=0x7f0a0050;
-        public static final int tv_my_collect=0x7f0a004d;
-        public static final int tv_my_exit=0x7f0a0059;
-        public static final int tv_my_order=0x7f0a0053;
-        public static final int tv_my_settings=0x7f0a0056;
+        public static final int tv_mine_name=0x7f0a0050;
+        public static final int tv_mine_title=0x7f0a004e;
+        public static final int tv_my_address=0x7f0a0056;
+        public static final int tv_my_collect=0x7f0a0053;
+        public static final int tv_my_exit=0x7f0a005f;
+        public static final int tv_my_order=0x7f0a0059;
+        public static final int tv_my_settings=0x7f0a005c;
         public static final int tv_no_book=0x7f0a0034;
         public static final int tv_rl_book_detail_introduse=0x7f0a000e;
-        public static final int tv_store_book_edit_att=0x7f0a0060;
-        public static final int tv_store_book_hot_att=0x7f0a0063;
-        public static final int tv_store_book_more=0x7f0a0061;
-        public static final int tv_store_book_name=0x7f0a0047;
-        public static final int tv_store_book_new_att=0x7f0a0065;
-        public static final int tv_store_fenlei=0x7f0a005c;
+        public static final int tv_store_book_edit_att=0x7f0a0066;
+        public static final int tv_store_book_hot_att=0x7f0a0069;
+        public static final int tv_store_book_more=0x7f0a0067;
+        public static final int tv_store_book_name=0x7f0a004d;
+        public static final int tv_store_book_new_att=0x7f0a006b;
+        public static final int tv_store_fenlei=0x7f0a0062;
         public static final int tv_total=0x7f0a0035;
         public static final int tv_total_price_count=0x7f0a0017;
         public static final int vp_activity=0x7f0a0024;
@@ -201,9 +208,10 @@ public final class R {
         public static final int cart_fragment=0x7f030007;
         public static final int item_address=0x7f030008;
         public static final int item_cart=0x7f030009;
-        public static final int item_store=0x7f03000a;
-        public static final int mine_fragment=0x7f03000b;
-        public static final int store_fragment=0x7f03000c;
+        public static final int item_cart_info=0x7f03000a;
+        public static final int item_store=0x7f03000b;
+        public static final int mine_fragment=0x7f03000c;
+        public static final int store_fragment=0x7f03000d;
     }
     public static final class menu {
         public static final int address=0x7f090000;

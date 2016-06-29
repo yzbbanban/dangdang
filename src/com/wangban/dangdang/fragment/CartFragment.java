@@ -22,6 +22,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
@@ -38,7 +40,7 @@ public class CartFragment extends Fragment implements ICartView {
 	private Button btn_editor;
 	@ViewInject(R.id.btn_cart_submit)
 	private Button btnCartSubmit;
-	
+
 	private Book book;
 
 	private CartAdapter adapter;
@@ -79,7 +81,6 @@ public class CartFragment extends Fragment implements ICartView {
 			public void onClick(View v) {
 				intent = new Intent(CartFragment.this.getActivity(),
 						CartInfoActivity.class);
-				intent.putExtra("book", book);
 				startActivity(intent);
 			}
 		});
@@ -106,6 +107,7 @@ public class CartFragment extends Fragment implements ICartView {
 		adapter = new CartAdapter(getActivity(), items, listView);
 		adapter.setPresenter(cartPresenter);
 		listView.setAdapter(adapter);
+		listViewAnim();
 	}
 
 	@Override
@@ -118,4 +120,13 @@ public class CartFragment extends Fragment implements ICartView {
 	public void setVisible() {
 		tvNoBook.setVisibility(View.VISIBLE);
 	}
+	
+	private void listViewAnim() {
+		LayoutAnimationController c = new LayoutAnimationController(
+				AnimationUtils.loadAnimation(getActivity(), R.anim.anim_item_listview));
+		c.setDelay(0.3f);
+		c.setOrder(LayoutAnimationController.ORDER_NORMAL);
+		listView.setLayoutAnimation(c);
+	}
+	
 }

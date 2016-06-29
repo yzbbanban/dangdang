@@ -48,4 +48,19 @@ public class JSONParser {
 		return addresses;
 	}
 
+	public static Address parseDefaultAddress(JSONObject addObject)
+			throws JSONException {
+
+		Address address = new Address();
+		address.setFull_address(addObject.getString("full_address"));
+		address.setId(addObject.getInt("id"));
+		address.setIs_default(addObject.getInt("is_default"));
+		address.setMobile(addObject.getString("mobile"));
+		address.setPhone(addObject.getString("phone"));
+		address.setPostalCode(addObject.getString("full_address"));
+		address.setReceiveName(addObject.getString("receiveName"));
+		address.setUserId(addObject.getInt("userId"));
+		return address;
+	}
+
 }
